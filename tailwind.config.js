@@ -1,15 +1,13 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
-import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
-        './resources/js/**/*.vue',
+        './resources/js/**/*.jsx',
     ],
 
     theme: {
@@ -17,8 +15,20 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors:{
+                'header':"#BE0F34",
+                'nav':"#FFFFFF",
+                'main':"#DCE5F4",
+                'footer':"#E5E5E5"
+            },
+            height:{
+                "10v":"10vh",
+                "15v":"15vh",
+                "25v":"25vh",
+                "65v":"65vh",
+            }
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [forms, require("daisyui")],
 };
